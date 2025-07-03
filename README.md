@@ -2,9 +2,9 @@
 
 You can likely run all models **except** the Depth model locally with a decent GPU.
 
-> ⚠️ This code is mostly meant to be run on **DTU's HPC cluster**.
-> All image files and pre-trained weights are **not included**.
-> This repo illustrates the coding done for employers.
+⚠️ This code is mostly meant to be run on **DTU's HPC cluster**.  
+All image files and pre-trained weights are **not included**.  
+This repo illustrates the coding done for employers.  
 
 # 📁 Structure of Directory
 
@@ -34,17 +34,18 @@ Thesis/                         # Parent directory
 A requirements and conda environment file is supplied for both a local
 and HPC setup.
 
-To create a conda environment with all packages run 'conda env create -f your_yml_file.yml'
+To create a conda environment with all packages run 'conda env create -f your_yml_file.yml'  
+
 To directly install requirements without conda env run 'pip install -r requirements.txt'
 
 If you have issues with the CLIP package you can manually install using: pip install git+https://github.com/openai/CLIP.git
 
 
-Naming conventions for the models are:
-Single - (Single views randomly chosen amongst the entire dataset)
-Multi - (All 6 views of the same setup)
-Double - (Single model into Multi model)
-Depth - (Outputs both semantic segmentation and depth predictions)
+Naming conventions for the models are:  
+Single - (Single views randomly chosen amongst the entire dataset)  
+Multi - (All 6 views of the same setup)  
+Double - (Single model into Multi model)  
+Depth - (Outputs both semantic segmentation and depth predictions)  
 
 As mentioned, you can likely run all except the Depth model locally with a decent GPU, however
 this code is mostly meant to be ran from DTU's HPC cluster.
@@ -53,16 +54,16 @@ Pretrained weights are included.
 If you want to train the models locally run: 'python3 -m Models.Train_Models --model='
 Make sure to cd into Thesis to keep it as the top level package.
 
-Arguments to Train_Models is:
---model Model Name (This flag is required)
---pretrained True/False
---path (Absolute path to parent folder of datasets)
+Arguments to Train_Models is:  
+--model Model Name (This flag is required)  
+--pretrained True/False  
+--path (Absolute path to parent folder of datasets)  
 
-pretrained: This flag is optional, default is True. Sets whether or not you want to use pretrained weights or train your own.
+**pretrained**: This flag is optional, default is True. Sets whether or not you want to use pretrained weights or train your own.
 If you train your own the pretrained weights are preserved and your model will save in Models/Weights/New_Weights/.
 Pretrained only retains the original weights. If you want to use your own you need to manually move and rename them.
 
-path: This flag is optional. The default path is structured within the Thesis/ directory but if you want to use the HPC cluster
+**path**: This flag is optional. The default path is structured within the Thesis/ directory but if you want to use the HPC cluster
 then you might need to move them to a scratch directory. Ensure to supply the absolute path to the parent directory ../Dataset for the datasets and keep them together:
 Dataset/           
  ├── Real/     
@@ -85,9 +86,9 @@ If you want to run inference to visualize the predictions you need to do it loca
 have a graphical display option. You can however still look at the print statements.
 Run 'python3 Models.Inference --model='
 
-Arguments to Inference is:
---model Model Name (This flag is required)
---path (Absolute path to parent folder of model to load - Optional)
+Arguments to Inference is:  
+--model Model Name (This flag is required)  
+--path (Absolute path to parent folder of model to load - Optional)  
 
 Inference will run the best model, display the input image in resized form and then display a side-by-side plot of
 a ground truth mask and model prediction for segmentation and depth (if available) respectively.
@@ -96,3 +97,9 @@ A fully working model was saved in Depth which does both segmentation and depth 
 It's recommended to run Inference with the --Depth flag for this reason.
 
 
+## Acknowledgements
+
+This project takes inspiration and adapts code from:
+
+- [MVTrans](https://github.com/ac-rad/MVTrans) by ac-rad
+- Pre-trained backbone from OpenAi's [CLIP](https://huggingface.co/docs/transformers/model_doc/clip)

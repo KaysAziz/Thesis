@@ -1,8 +1,10 @@
+This repo contains the codebase for my masters thesis: **Semantic Segmentation And Depth Estimation Of Semi-Transparent Objects**  
+
 You can likely run all models **except** the Depth model locally with a decent GPU.
 
 ⚠️ This code is mostly meant to be run on **DTU's HPC cluster**.  
 All image files and pre-trained weights are **not included**.  
-This repo illustrates the coding done for employers.  
+This repo exists as an illustration for employers and recruiters. If you wish to have the dataset you are free to e-mail me. 
 
 # 📁 Structure of Directory
 

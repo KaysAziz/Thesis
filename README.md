@@ -1,5 +1,3 @@
-# !!!!! OBS !!!!!
-
 You can likely run all models **except** the Depth model locally with a decent GPU.
 
 ⚠️ This code is mostly meant to be run on **DTU's HPC cluster**.  

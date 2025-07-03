@@ -1,11 +1,14 @@
-!!!!! OBS !!!!!
-You can likely run all models except the Depth model locally with a decent GPU, however
-this code is mostly meant to be ran from DTU's HPC cluster and all the image files and pre-trained weights are not included.
-This is just to illustrate the coding done for employers.
-!!!!! OBS !!!!!
+# !!!!! OBS !!!!!
 
+You can likely run all models **except** the Depth model locally with a decent GPU.
 
-Structure of directory:
+> ⚠️ This code is mostly meant to be run on **DTU's HPC cluster**.
+> All image files and pre-trained weights are **not included**.
+> This repo illustrates the coding done for employers.
+
+# 📁 Structure of Directory
+
+```text
 Thesis/                         # Parent directory
 │
 ├── Dataset/                    # Directory for input data
@@ -17,16 +20,16 @@ Thesis/                         # Parent directory
 │   ├── models/                 # Networks and training models
 │   │   └── model.py
 │   └── Weights/                # Pretrained Models
-|       └── New_Weights/        # Empty - Space for new models
+│       └── New_Weights/        # Empty - Space for new models
 │
 ├── Utility/                    # Helper Functions
 │
 ├── README.md                   # Project Description
-└── requirements.txt            # Local Dependencies
+├── requirements.txt            # Local Dependencies
 ├── requirements_hpc.txt        # HPC Dependencies
 ├── environment.yml             # Local Conda Environment
-│── hpc_env.yml                 # HPC Conda Environment
-
+└── hpc_env.yml                 # HPC Conda Environment
+```
 
 A requirements and conda environment file is supplied for both a local
 and HPC setup.
